@@ -85,8 +85,4 @@ async def verify_faces(
         m1_face_detected=True,
         m2_best_frame_index=best_idx,
         processing_ms=processing_ms,
-        model_versions={
-            "detector": "yolov5n-face-onnx",
-            "embedder": "histogram-lbp-v1"
-        }
     )

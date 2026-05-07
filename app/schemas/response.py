@@ -9,4 +9,3 @@ class VerifyResponse(BaseModel):
     m1_face_detected: bool = Field(..., description="Face detected in m1")
     m2_best_frame_index: int = Field(..., description="Best matching frame index from m2")
     processing_ms: int = Field(..., description="Total processing time in milliseconds")
-    model_versions: dict = Field(..., description="Model version information")

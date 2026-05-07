@@ -10,3 +10,4 @@ venv/
 *.log
 .pytest_cache/
 .mypy_cache/
+railway.toml
