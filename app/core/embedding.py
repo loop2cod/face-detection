@@ -2,10 +2,6 @@ import numpy as np
 import cv2
 import logging
 import os
-import os
-
-os.environ["OMP_NUM_THREADS"] = "4"
-os.environ["MKL_NUM_THREADS"] = "4"
 
 logger = logging.getLogger(__name__)
 
@@ -30,9 +26,6 @@ class FaceEmbedding:
             import onnxruntime as ort
             sess_options = ort.SessionOptions()
             sess_options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
-            sess_options.intra_op_num_threads = 4
-            sess_options.inter_op_num_threads = 4
-            sess_options.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL
             self._recognition = ort.InferenceSession(rec_path, sess_options, providers=['CPUExecutionProvider'])
             self.input_name = self._recognition.get_inputs()[0].name
             self.output_name = self._recognition.get_outputs()[0].name
